@@ -5,6 +5,7 @@ To maintain high code quality, system stability, and transparent version control
 ## 1. Task Decomposition & Planning
 - For complex, large, or multi-phase tasks, the agent MUST decompose the work into logical, manageable, and independently verifiable sub-tasks.
 - Avoid large monolithic edits across unrelated modules without intermediate validation checkpoints.
+- **Interactive Plan Synchronization**: During the planning and discussion phase, whenever the user proposes an idea, adjustment, or design modification that is agreed upon, the agent MUST immediately update the implementation plan (`implementation_plan.md` or active planning artifact). Do not wait for the entire conversation to conclude—keep the plan continuously synchronized so the user can read, review, and build upon it in real time.
 
 ## 2. Empirical Verification Before Commits
 - Always test and verify changes empirically before committing (run tests, check syntax, or verify endpoints).
