@@ -6,10 +6,14 @@ trigger: always_on
 
 To maintain high code quality, system stability, and transparent version control history across all projects:
 
-## 1. Task Decomposition & Planning
-- For complex, large, or multi-phase tasks, the agent MUST decompose the work into logical, manageable, and independently verifiable sub-tasks.
-- Avoid large monolithic edits across unrelated modules without intermediate validation checkpoints.
-- **Interactive Plan Synchronization**: During the planning and discussion phase, whenever the user proposes an idea, adjustment, or design modification that is agreed upon, the agent MUST immediately update the implementation plan (`implementation_plan.md` or active planning artifact). Do not wait for the entire conversation to conclude—keep the plan continuously synchronized so the user can read, review, and build upon it in real time.
+## 1. Task Decomposition & Persistent Implementation Planning
+- **Persistent Repository Plans**: Implementation plans MUST NOT exist solely in transient agent memory or temporary scratch directories. Every multi-step task or project must maintain a persistent, tracked Markdown plan located in the repository (e.g., `docs/plans/active_plan.md` or `docs/implementation_plan.md`).
+- **Standardized Checkbox Progress Tracking**: Plans must use explicit markdown task lists indicating status, verification, and commits:
+  - `- [x] **Sub-task 1: [Name]** - COMPLETED (Commit: `a1b2c3d`)`
+  - `- [/] **Sub-task 2: [Name]** - IN PROGRESS`
+  - `- [ ] **Sub-task 3: [Name]** - PENDING`
+- **Dynamic Real-Time Plan Synchronization**: Whenever an idea, adjustment, or design modification is agreed upon, or when a sub-task is completed and verified, the agent MUST immediately update the plan file in the repository (checking off `- [x]` and recording the commit hash).
+- **Verifiable Decomposition**: Decompose large tasks into independently testable and verifiable milestones. Avoid monolithic edits across unrelated modules.
 
 ## 2. Empirical Verification Before Commits
 - Always test and verify changes empirically before committing (run tests, check syntax, or verify endpoints).
