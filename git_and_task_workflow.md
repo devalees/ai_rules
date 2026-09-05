@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Task Execution & Git Workflow Protocol
 
 To maintain high code quality, system stability, and transparent version control history across all projects:

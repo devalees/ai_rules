@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Mandatory LLM Wiki & Knowledge Maintenance Protocol
 
 To ensure continuous project memory and architectural integrity across sessions, agents must strictly follow and maintain the project's LLM Wiki system.
