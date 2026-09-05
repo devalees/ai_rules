@@ -26,3 +26,8 @@ To maintain high code quality, system stability, and transparent version control
 - Ensure the commit message details what changed and the rationale behind the change.
 - Never leave untracked temporary files or unstaged completed work lingering in the working tree.
 - Inform the user when local commits are ready to push to the remote repository.
+
+## 4. Services, Databases & Containerization (Docker)
+- When a project requires backend infrastructure or database services (such as PostgreSQL, Redis, Celery, or background task runners), the agent MUST configure and manage these services using **Docker** and **Docker Compose** (`Dockerfile`, `docker-compose.yml`) rather than installing or running database servers directly on the bare-metal host.
+- Always provide clean, production-parity container configurations with sensible defaults, persistent volume mappings, and decoupled environment variables (`.env`).
+- Before binding host ports in `docker-compose.yml`, inspect existing running containers (`docker ps`) to prevent port collisions.

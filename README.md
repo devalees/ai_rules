@@ -23,6 +23,7 @@ When placed in `~/.gemini/config/rules/`, these rules are automatically loaded i
    - **Task Decomposition**: Breaking large tasks into verifiable sub-tasks.
    - **Empirical Verification**: Testing and verifying before committing.
    - **Atomic Git Commits**: Committing after each task/sub-task with conventional commit format (`feat`, `fix`, `docs`, `refactor`).
+   - **Dockerized Services**: Mandatory Docker and Docker Compose setup for backend infrastructure (PostgreSQL, Redis, Celery).
 
 ---
 
